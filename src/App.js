@@ -1,26 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css';
+import ListView from './ListView'
+import AppHeader from './AppHeader'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+        items: [
+            { id: '1', name: 'Escape From Tarkov', dev: 'Battlestate Games', engine: 'Unity'  },
+            { id: '2', name: 'Rainbow Six Siege', dev: 'Ubisoft Montreal', engine: 'AnvilNext'  },
+            { id: '3', name: 'Slay the Spire', dev: 'Mega Crit Games', engine: 'libGDX'  }
+        ]
+    }
+  }
+
+  removeProfile = targetItem => {
+    // const index = this.state.profiles.indexOf(targetProfile)
+    const items = this.state.items.filter(
+      item => item.id !== targetItem.id
+    )
+    this.setState({ items: items })
+  }
+
+  componentDidMount() {
+    
+  }
+
+  render() {
+    return (
+      <BrowserRouter>
+      <div className="App">
+        <AppHeader />
+        <Switch>
+          <Route exact path="/">
+            <ListView items={this.state.items} handleRemove={this.removeProfile}/>
+          </Route>
+        </Switch>
+      </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;

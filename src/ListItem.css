@@ -1,0 +1,34 @@
+.items-card {
+    display: flex;
+    flex-direction: row;
+    padding: 0 50px 0 50px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-info2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.item-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.divider {
+    height: 10px;
+}
+
+.editBtn {
+    border: 2px solid green;
+}
+
+.deleteBtn {
+    border: 2px solid red;
+}
