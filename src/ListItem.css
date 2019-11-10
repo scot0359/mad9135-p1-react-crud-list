@@ -2,11 +2,18 @@
     display: flex;
     flex-direction: row;
     padding: 0 50px 0 50px;
+    border: 5px solid black;
+    border-radius: 10px;
+    margin: 0 30px 10px 30px;
 }
 
-.item-info {
+.item-info{
     display: flex;
     flex-direction: column;
+}
+
+.item-info > h2 {
+    margin: 21px 0 0 0;
 }
 
 .item-info2 {
@@ -25,10 +32,14 @@
     height: 10px;
 }
 
+.divider2 {
+    width: 10px;
+}
+
 .editBtn {
     border: 2px solid green;
 }
 
 .deleteBtn {
-    border: 2px solid red;
+    border: 2px solid #FF4C55;
 }

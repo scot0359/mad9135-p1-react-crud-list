@@ -1,19 +1,19 @@
 .Header-Nav {
     height: 80px;
     padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: hsl(21, 41%, 65%);
-    color: hsl(220, 0%, 98%);
+    background-color: #1A1A1A;
+    color: #808080;
     margin: 0 0 30px 0;
     box-shadow: 0 0 10px 3px lightgrey;
 }
 
 .div{
     width: 100px;
+    margin-left: 30px;
 }
 
 .header-title {
@@ -22,9 +22,14 @@
 }
 
 .add-btn {
+    margin-right: 30px;
+    height: 25px;
     width: 100px;
     display: flex;
     justify-content: center;
+    border: 5px solid black;
+    border-radius: 30px;
+    align-items: center;
 }
 
 .add {

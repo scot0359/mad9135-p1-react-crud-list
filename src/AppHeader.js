@@ -15,7 +15,7 @@ function AppHeader () {
                 </div>
                 
                 <div className="add-btn">
-                    <NavLink to="/" exact activeClassName="current" className="add">Add Item</NavLink>
+                    <NavLink to="/new-item" exact activeClassName="current" className="add">+ Add Item</NavLink>
                 </div>
             </div>
         </>

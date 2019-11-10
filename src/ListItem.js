@@ -1,5 +1,6 @@
 import React from 'react'
 import './ListItem.css'
+import {NavLink} from 'react-router-dom'
 
 function ListItem (props) {
         return (
@@ -11,19 +12,21 @@ function ListItem (props) {
 
                         <div className="item-info2">
                             <h4>
-                                {props.item.dev}
+                                Created by {props.item.dev}
                             </h4>
-
+                            <div className="divider2"/>
                             <h4>
-                                {props.item.engine}
+                                <a href={props.item.website}>
+                                    Official Website
+                                </a>
                             </h4>
                         </div>
                     </div>
                     
                     <div className="item-nav">
-                            <button className="editBtn">Edit</button>
-                            <div className="divider"/>
-                            <button className="deleteBtn" onClick={() => props.delete(props.item)}>Delete</button>
+                    <NavLink to={`/edit-item/${props.item.id}`} activeClassName="current" className="add"><button className="editBtn">Edit</button></NavLink>
+                        <div className="divider"/>
+                        <button className="deleteBtn" onClick={() => props.delete(props.item)}>Delete</button>
                     </div>
                         
                 </div>

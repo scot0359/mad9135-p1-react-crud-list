@@ -1,0 +1,16 @@
+.newItemForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formName, .formDev, .formWebsite {
+    display: flex;
+    flex-direction: row;
+}

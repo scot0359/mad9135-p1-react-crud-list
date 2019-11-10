@@ -1,13 +1,16 @@
 import React from 'react'
-import './NewItemView.css'
+import './EditItemView.css'
 import {NavLink} from 'react-router-dom'
 
-class NewItemView extends React.Component {
+class EditItemView extends React.Component {
 
-    state = {
-        name: "",
-        dev: "",
-        website: ""
+    constructor(props){
+        super(props)
+        this.state = {
+            name: "",
+            dev: "",
+            website: ""
+        }
     }
 
     handleNameChange = (event) => {
@@ -22,18 +25,17 @@ class NewItemView extends React.Component {
         this.setState({ website: event.target.value})
     }
 
-    handleFormSubmit = event => {
+    handleFormEdit = event => {
         event.preventDefault()
         let obj = {
-            id: Math.random(),
+            id: this.props.match.params.itemId,
             name: this.state.name,
             dev: this.state.dev,
             website: this.state.website
         }
 
+        this.props.edit(obj.id, obj)
         
-        this.props.handleSubmit(obj)
-        this.setState({name: '', dev: '', website: ''})
         
         let games = localStorage.getItem('myGames')
         let arr
@@ -49,12 +51,11 @@ class NewItemView extends React.Component {
         }
     }
 
-
     render () {
         return (
             <div className="newItemForm">
                 <h1>
-                    Add a new video game
+                    Edit
                 </h1>
                 <form className="addItem" >
                     <div className="formName">
@@ -76,7 +77,7 @@ class NewItemView extends React.Component {
                         <input type="text" value={this.props.website} onChange={this.handleWebsiteChange}/>
                     </div>
                     <div className="submit">
-                        <button type="button" onClick={this.handleFormSubmit}><NavLink to="/" >Add</NavLink></button>
+                        <button type="button"  onClick={this.handleFormEdit}><NavLink to="/" >Add</NavLink></button>
                     </div>
                     <div className="cancel">
                         <button type="button" ><NavLink to="/" >Cancel</NavLink></button>
@@ -87,4 +88,4 @@ class NewItemView extends React.Component {
     }
 }
 
-export default NewItemView
+export default EditItemView
