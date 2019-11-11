@@ -1,6 +1,7 @@
 import React from 'react'
 import './NewItemView.css'
 import {NavLink} from 'react-router-dom'
+import cuid from 'cuid';
 
 class NewItemView extends React.Component {
 
@@ -23,9 +24,10 @@ class NewItemView extends React.Component {
     }
 
     handleFormSubmit = event => {
+        
         event.preventDefault()
         let obj = {
-            id: Math.random(),
+            id: cuid(),
             name: this.state.name,
             dev: this.state.dev,
             website: this.state.website
@@ -75,11 +77,13 @@ class NewItemView extends React.Component {
                         </h3>
                         <input type="text" value={this.props.website} onChange={this.handleWebsiteChange}/>
                     </div>
-                    <div className="submit">
-                        <button type="button" onClick={this.handleFormSubmit}><NavLink to="/" >Add</NavLink></button>
-                    </div>
-                    <div className="cancel">
-                        <button type="button" ><NavLink to="/" >Cancel</NavLink></button>
+                    <div className="buttons">
+                        <div className="submit">
+                            <button type="button" className="addBtn" onClick={this.handleFormSubmit}><NavLink to="/" className="cancelBtn">Add Game</NavLink></button>
+                        </div>
+                        <div className="cancel">
+                            <button type="button" className="cancelBtn"><NavLink to="/" className="cancelBtn">Cancel</NavLink></button>
+                        </div>
                     </div>
                 </form>
             </div>

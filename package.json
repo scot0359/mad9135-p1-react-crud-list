@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://scot0359.github.io/mad9135-p1-react-crud-list",
   "dependencies": {
+    "cuid": "^2.1.6",
     "gh-pages": "^2.1.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",

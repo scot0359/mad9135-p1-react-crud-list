@@ -16,7 +16,7 @@ function ListItem (props) {
                             </h4>
                             <div className="divider2"/>
                             <h4>
-                                <a href={props.item.website}>
+                                <a href={props.item.website} target="_blank" rel="noopener noreferrer">
                                     Official Website
                                 </a>
                             </h4>

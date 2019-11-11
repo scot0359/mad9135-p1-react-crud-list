@@ -35,20 +35,10 @@ class EditItemView extends React.Component {
         }
 
         this.props.edit(obj.id, obj)
+
+        localStorage.getItem('myGames')
+        localStorage.setItem('myGames', JSON.stringify(obj))
         
-        
-        let games = localStorage.getItem('myGames')
-        let arr
-        if(games){
-            arr = JSON.parse(games)
-            arr.push(obj)
-            arr = Array.from(new Set(arr))
-            localStorage.setItem('myGames', JSON.stringify(arr))
-        }else{
-            arr = []
-            arr.push(obj)
-            localStorage.setItem('myGames', JSON.stringify(arr))
-        }
     }
 
     render () {
@@ -76,11 +66,13 @@ class EditItemView extends React.Component {
                         </h3>
                         <input type="text" value={this.props.website} onChange={this.handleWebsiteChange}/>
                     </div>
-                    <div className="submit">
-                        <button type="button"  onClick={this.handleFormEdit}><NavLink to="/" >Add</NavLink></button>
-                    </div>
-                    <div className="cancel">
-                        <button type="button" ><NavLink to="/" >Cancel</NavLink></button>
+                    <div className="buttons">
+                        <div className="submit">
+                            <button type="button" className="addBtn" onClick={this.handleFormEdit}><NavLink to="/" className="addBtn" >Accept</NavLink></button>
+                        </div>
+                        <div className="cancel">
+                            <button type="button" className="cancelBtn"><NavLink to="/" className="cancelBtn">Cancel</NavLink></button>
+                        </div>
                     </div>
                 </form>
             </div>

@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: row;
     padding: 0 50px 0 50px;
-    border: 5px solid black;
     border-radius: 10px;
     margin: 0 30px 10px 30px;
+    -webkit-box-shadow: 0 0 10px 2px darkgrey;
+        box-shadow: 0 0px 10px 2px lightgrey;
 }
 
 .item-info{
@@ -37,9 +38,32 @@
 }
 
 .editBtn {
-    border: 2px solid green;
+    border: 2px solid rgb(3, 170, 42);
+    color: rgb(3, 170, 42);
+    width: 70px;
+    font-size: .8rem;
+    border-radius: 25px;
+}
+
+.deleteBtn {
+    width: 70px;
+}
+
+.editBtn:hover{
+    border: 2px solid rgb(3, 128, 32);
+    color: #fcfcfc;
+    background-color: rgb(3, 128, 32);
 }
 
 .deleteBtn {
     border: 2px solid #FF4C55;
+    font-size: .8rem;
+    color: #FF4C55;
+    border-radius: 25px;
+}
+
+.deleteBtn:hover {
+    border: 2px solid rgb(221, 44, 53);
+    color: #fcfcfc;
+    background-color: rgb(221, 44, 53);
 }

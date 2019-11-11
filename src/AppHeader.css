@@ -27,17 +27,16 @@
     width: 100px;
     display: flex;
     justify-content: center;
-    border: 5px solid black;
     border-radius: 30px;
     align-items: center;
 }
 
 .add {
     text-decoration: none;
-    color: white;
+    color: #808080;
 }
 
 .add:hover {
-    color:  hsl(22, 89%, 36%);
+    color:  #ffffff;
 }
 
