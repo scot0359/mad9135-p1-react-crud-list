@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, HashRouter } from 'react-router-dom'
 import './App.css';
 import ListView from './ListView'
 import AppHeader from './AppHeader'
@@ -86,7 +86,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter basename="/">
         <div className="App">
           <AppHeader />
           <Switch>
@@ -97,12 +97,10 @@ class App extends React.Component {
               <NewItemView items={this.state.items} handleSubmit={this.addItem}/>
             </Route>
             <Route path="/edit-item/:itemId" Component={EditItemView} render={(props) => <EditItemView {...props} edit={this.editItem} />}>
-            
-              {/* <EditItemView items={this.state.items} /> */}
             </Route>
           </Switch>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
